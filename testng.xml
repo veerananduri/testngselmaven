@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="WordPressSuite" verbose="0">
+  <test thread-count="1" name="WordPress Tests" verbose="0">
+    <classes>
+      <class name="com.tests.AppTest"/>
+      <class name="com.tests.WordPressLoginTest"/>
+    </classes>
+  </test> <!-- Surefire test -->
+</suite> <!-- Surefire suite -->
+            
