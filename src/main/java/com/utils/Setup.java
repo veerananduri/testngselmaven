@@ -3,6 +3,7 @@ package com.utils;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -13,12 +14,28 @@ public class Setup {
 	
 	public RemoteWebDriver callDriver() {
 		
-		System.setProperty("webdriver.chrome.driver", 
-				"C:\\Users\\ganga\\eclipse-workspace\\SeleniumTrainingSept2020\\drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
+		String browser = PropertyReaderUtils.getProperty("browser");
+		System.out.println("Browser returned : "+browser);
 		
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		if(browser.equals("chrome")) {
+			System.setProperty("webdriver.chrome.driver", 
+					"C:\\Users\\ganga\\eclipse-workspace\\SeleniumTrainingSept2020\\drivers\\chromedriver.exe");
+			driver = new ChromeDriver();
+			
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);			
+		} else if (browser.equals("firefox")) {
+			System.setProperty("webdriver.gecko.driver", 
+					"C:\\Users\\ganga\\eclipse-workspace\\SeleniumTrainingSept2020\\drivers\\geckodriver.exe");
+			driver = new FirefoxDriver();
+			
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);			
+		} else if(browser.equals("IE")) {
+			//Assignment - Setup the Driver for IE & Launch
+		} else if(browser.equals("Edge")) {
+			//Assignment - Setup the Driver for Edge & Launch
+		}
 		return driver;
 	}
 	
