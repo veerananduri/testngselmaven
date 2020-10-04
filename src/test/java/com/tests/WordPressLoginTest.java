@@ -39,19 +39,17 @@ public class WordPressLoginTest extends Setup {
 
 		commons.clickElement(wpPO.clickLogin());
 		
-		System.out.println(System.getProperty("user.dir"));
-		System.out.println(System.getProperty("os.name"));
-		
 		//Validate the display name is present
 		//TestNG Assertions
 		boolean value = commons.isDisplayed(wpHPPO.displayName());
 		Assert.assertTrue(value);
 		
-		String text = commons.getText(wpHPPO.displayName());
-		
-		Assert.assertEquals("Checking the text of the display name", "opensourcecms", text);
-		
-		System.out.println("Commit through Eclipse");
+		/*
+		 * String text = commons.getText(wpHPPO.displayName());
+		 * 
+		 * Assert.assertEquals("Checking the text of the display name", "opensourcecms",
+		 * text);
+		 */		
 	}
 	
 	/*
