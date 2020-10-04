@@ -28,15 +28,15 @@ public class WordPressLoginTest extends Setup {
 	@Test (dataProvider = "Login")
 	public void loginTest(String username, String password) {		
 		
-		//Initialize the driver
+		//Step1 : Initialize the driver
 		initTest();
-		
+
 		driver.get(PropertyReaderUtils.getProperty("url"));
 		
 		commons.typeValue(wpPO.loginField(), username);
 		
 		commons.typeValue(wpPO.pwdField(), password);
-		
+
 		commons.clickElement(wpPO.clickLogin());
 		
 		System.out.println(System.getProperty("user.dir"));

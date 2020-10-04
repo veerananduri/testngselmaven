@@ -18,4 +18,9 @@ public class WordPressLoginPageObjects {
 		By loginClick = By.id("wp-submit");
 		return loginClick;
 	}
+	
+	public By wpLogo() {
+		By logo = By.xpath("//a[text()='Powered by WordPress']");
+		return logo;
+	}
 }
