@@ -25,15 +25,15 @@ public class WordPressLoginTest extends Setup {
 	@Test
 	public void loginTest() {		
 		
-		//Initialize the driver
+		//Step1 : Initialize the driver
 		initTest();
 		
+		//Step1 : Launch the URL
 		driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php");
 		
-		commons.typeValue(wpPO.loginField(), "opensourcecms");
-		
-		commons.typeValue(wpPO.pwdField(), "opensourcecms");
-		
+		//Step2 : Enter Username, Password and Click Login
+		commons.typeValue(wpPO.loginField(), "opensourcecms");		
+		commons.typeValue(wpPO.pwdField(), "opensourcecms");		
 		commons.clickElement(wpPO.clickLogin());
 		
 		//Validate the display name is present
