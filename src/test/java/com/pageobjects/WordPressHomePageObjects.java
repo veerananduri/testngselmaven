@@ -8,4 +8,9 @@ public class WordPressHomePageObjects {
 		By name = By.xpath("//*[@id='wp-admin-bar-my-account']/a/span");
 		return name;
 	}
+	
+	public By leftMenuBar() {
+		By menu = By.cssSelector("ul#adminmenu");
+		return menu;
+	}
 }
