@@ -27,9 +27,13 @@ public class Commons extends Setup {
 		driver.findElement(locator).click();
 	}
 	
-	public boolean isDisplayed(By locator) {
-		boolean availability;
-		return availability = driver.findElement(locator).isDisplayed();		
+	/**
+	 * This method validates if the element displayed or not
+	 * @param locator
+	 * @return true/false
+	 */
+	public boolean isDisplayed(By locator) {		
+		return driver.findElement(locator).isDisplayed();		
 	}
 	
 	public String getText(By locator) {

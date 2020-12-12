@@ -19,7 +19,7 @@ public class Setup {
 		
 		if(browser.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", 
-					"C:\\Users\\ganga\\eclipse-workspace\\SeleniumTrainingSept2020\\drivers\\chromedriver.exe");
+					"C:\\Users\\ganga\\Selenium\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			
 			driver.manage().window().maximize();
@@ -27,8 +27,7 @@ public class Setup {
 		} else if (browser.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", 
 					"C:\\Users\\ganga\\eclipse-workspace\\SeleniumTrainingSept2020\\drivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-			
+			driver = new FirefoxDriver();			
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);			
 		} else if(browser.equals("IE")) {
